@@ -1,0 +1,29 @@
+{
+  "name": "Sentics",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000Q\u0000u\u0000e\u0000s\u0000t\u0000D\u0000B\u0000-\u0000E\u0000x\u0000p\u0000r\u0000e\u0000s\u0000s\u0000J\u0000s\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raqeebhamza/QuestDB-ExpressJs.git"
+  },
+  "keywords": [],
+  "author": "Raqeeb Hamza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raqeebhamza/QuestDB-ExpressJs/issues"
+  },
+  "homepage": "https://github.com/raqeebhamza/QuestDB-ExpressJs#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "questdb": "^0.1.0"
+  }
+}
