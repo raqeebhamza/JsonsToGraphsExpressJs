@@ -112,6 +112,26 @@ app.get('/api/get_human_count/:duration', (req, res) => {
     res.json({ message:"Fetched Successfully",result:rows});
   })
 });
+app.get('/api/heatMap_data/:duration', (req, res) => {
+  const db = new sqlite3.Database('./database.db', sqlite3.OPEN_READWRITE, (err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    else{
+        console.log('Connected to the database.');
+    }
+  });
+  const duration = req.params.duration;
+  
+  db.all(`select timestamp-(60*${duration}) as time , Avg(pos_x) as x, Avg(pos_y) as y, count(*) as count
+   from instances group by time order by time;`,(err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json({ message:"Fetched Successfully",result:rows});
+  })
+});
 app.listen(3005, () => {
     console.log('Server started on port 3005');
 });
